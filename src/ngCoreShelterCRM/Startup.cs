@@ -36,6 +36,9 @@ namespace ngCoreShelterCRM
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IConfigurationRoot>(Configuration);
+            services.AddSingleton<IConfiguration>(Configuration);
+
             // Add framework services
             services.AddMvc(options =>
             {
@@ -50,6 +53,7 @@ namespace ngCoreShelterCRM
                     res.NamingStrategy = null;
                 }
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
