@@ -61,11 +61,6 @@ namespace ngCoreShelterCRM
             //       .WriteTo.RollingFile(pathFormat: "logs\\log-{Date}.log")
             //       .CreateLogger();
 
-
-
-            app.UseMvcWithDefaultRoute();
-            loggerFactory.AddConsole();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
