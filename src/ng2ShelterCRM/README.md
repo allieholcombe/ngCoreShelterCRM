@@ -29,3 +29,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Autocomplete: https://github.com/oferh/ng2-completer
 https://github.com/ng2-ui/auto-complete
+
+Infinite List:
+https://ng2-ui.github.io/dist/#/infinite-list
+
+Bootstrap:
+https://ng-bootstrap.github.io/#/home
+
+Progressive Applications:
+https://houssein.me/progressive-angular-applications
+https://github.com/angular/mobile-toolkit
+
+Prototypical Inheritance Model
+https://medium.com/javascript-scene/master-the-javascript-interview-what-s-the-difference-between-class-prototypal-inheritance-e4cd0a7562e9
+
+What is a closure?
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
