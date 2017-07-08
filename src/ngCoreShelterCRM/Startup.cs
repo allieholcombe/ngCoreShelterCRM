@@ -108,7 +108,7 @@ namespace ngCoreShelterCRM
             app.UseJwtBearerAuthentication(new JwtBearerOptions
             {
                 AutomaticAuthenticate = true,
-                Authority = "https://securetoken.google.com/my-firebase-project",
+                Authority = "https://securetoken.google.com/ngCoreShelterCRM",
                 TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
