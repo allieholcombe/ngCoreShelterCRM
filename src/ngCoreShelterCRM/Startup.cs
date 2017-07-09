@@ -104,20 +104,6 @@ namespace ngCoreShelterCRM
 
             app.UseDefaultFiles(); // so index.html is not required
             app.UseStaticFiles();
-            //Courtesy of https://blog.markvincze.com/secure-an-asp-net-core-api-with-firebase/
-            app.UseJwtBearerAuthentication(new JwtBearerOptions
-            {
-                AutomaticAuthenticate = true,
-                Authority = "https://securetoken.google.com/ngCoreShelterCRM",
-                TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidIssuer = "https://securetoken.google.com/ngCoreShelterCRM",
-                    ValidateAudience = true,
-                    ValidAudience = "ngCoreShelterCRM",
-                    ValidateLifetime = true
-                }
-            });
 
             // put last so header configs like CORS or Cookies etc can fire
             app.UseMvc(routes =>
