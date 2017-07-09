@@ -8,6 +8,6 @@ namespace ngCoreShelterCRM.Models
 {
     public class DatabaseContext
     {
-        public FirebaseClient MyProperty { get; set; } = new FirebaseClient("https://usingwithcsharp.firebaseio.com/");
+        public FirebaseClient client { get; set; } = new FirebaseClient("https://usingwithcsharp.firebaseio.com/");
     }
 }

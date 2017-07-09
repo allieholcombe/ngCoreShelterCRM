@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ngCoreShelterCRM.Models.Repositories;
+using Newtonsoft.Json;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,11 +13,14 @@ namespace ngCoreShelterCRM.Controllers
     [Route("api/[controller]")]
     public class PetsController : Controller
     {
+        private FBPetRepository _repo = new FBPetRepository();
+
         // GET api/pets
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var pets = _repo.Pets().Result;
+            yield return JsonConvert.SerializeObject(pets);
         }
 
         // GET api/pets/5
