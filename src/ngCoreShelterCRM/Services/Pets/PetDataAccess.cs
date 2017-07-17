@@ -7,15 +7,13 @@ using Firebase.Database;
 using ngCoreShelterCRM.Models;
 using Firebase.Database.Query;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace ngCoreShelterCRM.Services.Pets
 {
     public class PetDataAccess
     {
         protected static FirebaseClient db = new FirebaseClient("https://usingwithcsharp.firebaseio.com/");
 
-        public async Task<List<FirebaseObject<Pet>>> Pets()
+        public async Task<List<FirebaseObject<Pet>>> RetrievePets()
         {
             var pets = await db
               .Child("pets")
@@ -24,7 +22,7 @@ namespace ngCoreShelterCRM.Services.Pets
             return pets.ToList();
         }
 
-        public async Task<Pet> GetPet(string id)
+        public async Task<Pet> RetrievePetById(string id)
         {
             var pet = await db
                 .Child("pets")

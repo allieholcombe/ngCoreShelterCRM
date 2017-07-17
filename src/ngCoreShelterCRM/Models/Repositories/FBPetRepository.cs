@@ -1,7 +1,7 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ namespace ngCoreShelterCRM.Models.Repositories
 {
     public class FBPetRepository : IPetRepository
     {
-        protected static FirebaseClient db = new FirebaseClient("https://usingwithcsharp.firebaseio.com/");
-
         protected static PetDataAccess dataAccess = new PetDataAccess();
+
+        protected static PetTransform transform = new PetTransform();
 
         /// <summary>
         /// Gets all pets from database
@@ -22,18 +22,9 @@ namespace ngCoreShelterCRM.Models.Repositories
         /// <returns>Task List of Pet Objects</returns>
         public async Task<List<Pet>> Pets()
         {
-            var pets = await dataAccess.Pets();
+            var pets = await dataAccess.RetrievePets();
 
-            List<Pet> petList = new List<Pet>();
-
-            //needs transform layer
-            foreach (var pet in pets)
-            {
-                Pet currentPet = new Pet();
-                currentPet.Name = $"{ pet.Object.Name }";
-                currentPet.Key = $"{ pet.Key }";
-                petList.Add(currentPet);
-            }
+            var petList = await transform.TransformPets(pets);
 
             return petList;
         }
@@ -45,8 +36,9 @@ namespace ngCoreShelterCRM.Models.Repositories
         /// <returns>Task/single pet object</returns>
         public async Task<Pet> GetPet(string id)
         {
-            var pet = await dataAccess.GetPet(id);
+            var pet = await dataAccess.RetrievePetById(id);
 
+            //should use transformatio service, don't know how to access key
             pet.Key = id;
 
             return pet;
@@ -60,7 +52,7 @@ namespace ngCoreShelterCRM.Models.Repositories
         public async Task<Pet> AddPet(string data)
         {
             //this should call a transformation service
-            Pet newPet = JsonConvert.DeserializeObject<Pet>(data);
+            Pet newPet = await transform.JsonToPet(data);
           
             newPet.Key = await dataAccess.AddPet(newPet);
 
