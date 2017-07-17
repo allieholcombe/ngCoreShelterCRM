@@ -1,5 +1,6 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ngCoreShelterCRM.Models.Repositories
 {
-    public class FBPetRepository
+    public class FBPetRepository : IPetRepository
     {
         protected static FirebaseClient db = new FirebaseClient("https://usingwithcsharp.firebaseio.com/");
 
@@ -28,11 +29,23 @@ namespace ngCoreShelterCRM.Models.Repositories
             {
                 Pet currentPet = new Pet();
                 currentPet.Name = $"{ pet.Object.Name }";
-                currentPet.Id = $"{ pet.Key }";
+                currentPet.Key = $"{ pet.Key }";
                 petList.Add(currentPet);
             }
 
             return petList;
+        }
+
+        public async Task<Pet> GetPet(string id)
+        {
+            var pet = await db
+                .Child("pets")
+                .Child(id)
+                .OnceSingleAsync<Pet>();
+
+            pet.Key = id;
+
+            return pet;
         }
     }
 }

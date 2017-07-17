@@ -8,6 +8,6 @@ namespace ngCoreShelterCRM.Models.Repositories
 {
     public interface IPetRepository
     {
-        List<Pet> Pets { get; }
+        Task<List<Pet>> Pets();
     }
 }
