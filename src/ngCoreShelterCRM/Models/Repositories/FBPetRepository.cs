@@ -1,6 +1,7 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,18 @@ namespace ngCoreShelterCRM.Models.Repositories
             pet.Key = id;
 
             return pet;
+        }
+
+        public async Task<Pet> AddPet(string data)
+        {
+            //this should call a transformation service
+            Pet newPet = JsonConvert.DeserializeObject<Pet>(data);
+                      
+            var pet = await db
+              .Child("pets")
+              .PostAsync(newPet);
+
+            return newPet;
         }
     }
 }

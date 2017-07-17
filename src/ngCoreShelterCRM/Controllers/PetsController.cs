@@ -37,6 +37,7 @@ namespace ngCoreShelterCRM.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
+            var pet = _repo.AddPet(value);
         }
 
         // PUT api/pets/5
