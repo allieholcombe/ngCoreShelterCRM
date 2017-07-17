@@ -9,12 +9,14 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './common/log-in/log-in.component';
 import { SplashComponent } from './splash/splash.component';
+import { PetListComponent } from './pets/petlist/petlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
-    SplashComponent
+    SplashComponent,
+    PetListComponent
   ],
   imports: [
     BrowserModule,
