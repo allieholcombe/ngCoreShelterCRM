@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using ngCoreShelterCRM.Models;
 using Firebase.Database;
 using Newtonsoft.Json;
@@ -24,7 +20,6 @@ namespace ngCoreShelterCRM.Services.Pets
                 currentPet.Key = $"{ pet.Key }";
                 petList.Add(currentPet);
             }
-
             return petList;
         }
 

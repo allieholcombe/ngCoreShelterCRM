@@ -1,10 +1,4 @@
-﻿using Firebase.Database;
-using Firebase.Database.Query;
-using Microsoft.AspNetCore.Mvc;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using ngCoreShelterCRM.Services.Pets;
 
