@@ -4,11 +4,13 @@ import { Pet } from './../../models/pet.model';
 
 
 @Injectable()
-export class PetDataAccess {
-    constructor(private http: Http) { }
+export class PetsDataAccess {
+    constructor(private http: Http) {}
+
+    host:string = "http://localhost:4300";
 
     getAllPets() {
-        return this.http.get('/api/pets')
+        return this.http.get(this.host + '/api/pets')
             .subscribe(data => console.log(data));
     }
 

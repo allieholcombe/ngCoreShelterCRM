@@ -9,7 +9,10 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { LogInComponent } from './common/log-in/log-in.component';
 import { SplashComponent } from './splash/splash.component';
-import { PetListComponent } from './pets/petlist/petlist.component';
+import { PetListComponent } from './animals/petlist/petlist.component';
+
+//Services
+import { PetsDataAccess } from './services/pets/pets.data.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,7 @@ import { PetListComponent } from './pets/petlist/petlist.component';
     FormsModule,
     routing
   ],
-  providers: [],
+  providers: [PetsDataAccess],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

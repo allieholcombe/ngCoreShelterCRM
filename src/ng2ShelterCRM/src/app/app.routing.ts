@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 //Components
 import { SplashComponent } from './splash/splash.component';
-import { PetListComponent } from './pets/petlist/petlist.component';
+import { PetListComponent } from './animals/petlist/petlist.component';
 
 const appRoutes: Routes = [
     {
