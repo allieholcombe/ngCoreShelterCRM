@@ -1,8 +1,8 @@
 export class Pet {
     public id: string;
     public name: string;
-    constructor(public databaseObject: any) {
+    constructor(databaseObject: any) {
         this.id = databaseObject.id;
-        this.name = databaseObject.name;
+        this.name = databaseObject.Name;
     }
 }

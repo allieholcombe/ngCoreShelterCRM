@@ -13,11 +13,11 @@ export class PetsDataAccess {
     getAllPets() {
         return this.http.get(this._host + '/api/pets')
             .map((res: Response) => res.json());
-        // .subscribe(data => console.log(data));
     }
 
-    getSinglePet(id: string) {
-        return this.http.get('/api/pets/' + id)
-    }
+    // getSinglePet(id: string) {
+    //     return this.http.get('/api/pets/' + id);
+    //         .map((res: Response) => res.json());
+    // }
 
 }
