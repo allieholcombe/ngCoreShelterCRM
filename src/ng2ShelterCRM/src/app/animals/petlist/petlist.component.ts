@@ -8,6 +8,8 @@ import { PetsRepository } from './../../services/pets/pets.repository.service';
   providers: [PetsRepository]
 })
 export class PetListComponent implements OnInit {
+  result: any;
+  isComplete: boolean = false;
 
   constructor(private _repo: PetsRepository) { }
 
@@ -16,11 +18,16 @@ export class PetListComponent implements OnInit {
 
   //json returns this with extra array, not sure why
   retrievePets() {
-    var result = this._repo.getAllPets();
+    this.isComplete = false;
+    this._repo.getAllPets()
+      .subscribe((data: Response) => this.result = data,
+                 (error: any) => console.log("You borked it"),
+                 () => this.isComplete = true);
   }
 
   retrieveSinglePet(id: string) {
-    var result = this._repo.getSinglePet(id);
+    this._repo.getSinglePet(id);
+    console.log(this.result);
   }
 
 }

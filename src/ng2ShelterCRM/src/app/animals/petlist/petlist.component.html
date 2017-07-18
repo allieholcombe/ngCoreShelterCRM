@@ -3,3 +3,11 @@
     <input #petId (keyup.enter)="retrieveSinglePet(petId.value)">
     <button (click)="retrieveSinglePet(petId.value)">Click to find pet</button>
 </div>
+
+<div id="results" *ngIf="isComplete">
+    <ul>
+        <li *ngFor="let pet of result">
+            {{pet.name}}, {{pet.id}}
+        </li>
+    </ul>
+</div>

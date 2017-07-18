@@ -19,13 +19,14 @@ export class PetsRepository {
     getAllPets() {
         let allPets = this._dataAccess.getAllPets()
             .map(data => this._transform.createPets(data[0]))
-            .subscribe(data => console.log(data));
+            // .subscribe(data => console.log(data));
         return allPets;
     }
 
     getSinglePet(id: string) {
         let fetchedPet = this._dataAccess.getSinglePet(id)
             .map(data => this._transform.createPet(data))
-            .subscribe(data => console.log(data));
+            // .subscribe(data => console.log(data));
+            return fetchedPet;
     }
 }
