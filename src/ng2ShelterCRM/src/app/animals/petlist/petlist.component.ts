@@ -19,4 +19,8 @@ export class PetListComponent implements OnInit {
     var result = this._repo.getAllPets();
   }
 
+  retrieveSinglePet(id: string) {
+    var result = this._repo.getSinglePet(id);
+  }
+
 }

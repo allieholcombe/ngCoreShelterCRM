@@ -15,9 +15,9 @@ export class PetsDataAccess {
             .map((res: Response) => res.json());
     }
 
-    // getSinglePet(id: string) {
-    //     return this.http.get('/api/pets/' + id);
-    //         .map((res: Response) => res.json());
-    // }
+    getSinglePet(id: string) {
+        return this.http.get(this._host + '/api/pets/' + id)
+            .map((res: Response) => res.json());
+    }
 
 }

@@ -1,1 +1,5 @@
 <button (click)="retrievePets()">Click for pets</button>
+<div>
+    <input #petId (keyup.enter)="retrieveSinglePet(petId.value)">
+    <button (click)="retrieveSinglePet(petId.value)">Click to find pet</button>
+</div>

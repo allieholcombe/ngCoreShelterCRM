@@ -8,23 +8,29 @@ import { Pet } from './../../models/pet.model';
 export class PetsTransform {
     constructor() { }
 
-    transformAllPets(data: any) {
-        debugger;
-        data = JSON.parse(data);
-        if (Array.isArray(data)) {
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].hasOwnProperty("Key")) {
-                    data[i].id = data[i].Key;
-                    delete data[i].Key;
-                }
-                data[i] = new Pet(data[i]);
-            }
+    transformKeyToId(data: any) {
+        if (data.hasOwnProperty("Key")) {
+            data.id = data.Key;
+            delete data.Key;
         }
         return data;
     }
 
-    getSinglePet(id: string) {
-
+    createPet(data: any) {
+        data = this.transformKeyToId(data);
+        data = new Pet(data);
+        return data;
     }
 
+    createPets(data: any) {
+        data = JSON.parse(data);
+        if (Array.isArray(data)) {
+            for (let i = 0; i < data.length; i++) {
+                // data[i] = this.transformKeyToId(data[i]);
+                // data[i] = new Pet(data[i]);
+                data[i] = this.createPet(data[i]);
+            }
+        }
+        return data;
+    }
 }
