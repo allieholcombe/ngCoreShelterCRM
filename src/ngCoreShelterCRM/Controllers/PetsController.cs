@@ -17,7 +17,6 @@ namespace ngCoreShelterCRM.Controllers
         public IEnumerable<string> Get()
         {
             var pets = _repo.Pets().Result;
-            //Console.WriteLine(JsonConvert.SerializeObject(pets));
             yield return JsonConvert.SerializeObject(pets);
         }
 

@@ -14,9 +14,11 @@ export class PetListComponent implements OnInit {
   ngOnInit() {
   }
 
+  //json returns this with extra array, not sure why
   retrievePets() {
-    var result = this._repo.getAllPets();
-    console.log(result);
+    var result = this._repo.getAllPets()
+      .map(data => this._repo.transformAllPets(data[0]))
+      .subscribe(data => console.log(data));
   }
 
 }

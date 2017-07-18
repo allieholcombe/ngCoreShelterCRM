@@ -13,6 +13,7 @@ import { PetListComponent } from './animals/petlist/petlist.component';
 
 //Services
 import { PetsDataAccess } from './services/pets/pets.data.service';
+import { PetsTransform} from './services/pets/pets.transform.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PetsDataAccess } from './services/pets/pets.data.service';
     FormsModule,
     routing
   ],
-  providers: [PetsDataAccess],
+  providers: [PetsDataAccess,
+              PetsTransform],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
