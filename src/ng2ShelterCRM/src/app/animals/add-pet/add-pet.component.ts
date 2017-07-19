@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Rx';
 
 //Services
 import { PetsRepository } from './../../services/pets/pets.repository.service';
@@ -12,23 +13,23 @@ import { Pet } from './../../models/pet.model';
   templateUrl: './add-pet.component.html',
   styleUrls: ['./add-pet.component.scss']
 })
+
 export class AddPetComponent implements OnInit {
   form: FormGroup;
-
-  // name =  new FormControl("");
+  newPet: Pet = new Pet();
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
-      "name": new FormControl("")
+      "name": new FormControl(""),
+      "id": null
     })
   }
 
   ngOnInit() {
   }
 
+  //trying to take form controls and apply them to pet model
   onSubmit() {
-    console.log(this.form);
-    console.log(this.form.value);
-    // let newPet = new Pet(this.form.value);
+    this.newPet.name = this.form.get('name').value;
   }
 }

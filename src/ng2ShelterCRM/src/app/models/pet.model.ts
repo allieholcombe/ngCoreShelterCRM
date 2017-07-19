@@ -1,9 +1,14 @@
 export class Pet {
-    public id: string;
+    public id?: string;
     public name: string;
 
-    constructor(databaseObject: any) {
-        this.id = databaseObject.id;
-        this.name = databaseObject.Name;
+    constructor(obj: Pet = {} as Pet) {
+        let {
+            id = null,
+            name = ""
+        } = obj;
+
+        this.id = obj.id;
+        this.name = obj.name;
     }
 }

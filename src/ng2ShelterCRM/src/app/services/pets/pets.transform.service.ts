@@ -13,6 +13,10 @@ export class PetsTransform {
             data.id = data.Key;
             delete data.Key;
         }
+        if(data.hasOwnProperty("Name")) {
+            data.name = data.Name;
+            delete data.Name;
+        }
         return data;
     }
 
