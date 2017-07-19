@@ -8,11 +8,6 @@
 </div>
 
 <div id="results" *ngIf="isComplete">
-    <ul *ngIf="isMultiple">
-        <li *ngFor="let pet of result">
-            {{pet.name}}, {{pet.id}}
-        </li>
-    </ul>
     <p *ngIf="!isMultiple"> {{result.name}}, {{result.id}}</p>
 
     <div class="container" *ngIf="isMultiple">
@@ -23,5 +18,3 @@
 </div>
 
 <add-pet></add-pet>
-
-<delete-pet></delete-pet>
