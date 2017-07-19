@@ -35,11 +35,8 @@ export class AddPetComponent implements OnInit {
 
   //trying to take form controls and apply them to pet model
   onSubmit() {
-    console.log("Submitted");
     //figure out better structure using repository later?
     this.newPet.name = this._transform.formCreatePet(this.form);
-    console.log("newPet:");
-    console.log(this.newPet);
     this._data.addPet(this.newPet)
       .subscribe(data => console.log(data));
   }
