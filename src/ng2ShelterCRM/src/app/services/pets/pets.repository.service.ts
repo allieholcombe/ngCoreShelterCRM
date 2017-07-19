@@ -29,4 +29,9 @@ export class PetsRepository {
             // .subscribe(data => console.log(data));
             return fetchedPet;
     }
+
+    deletePet(id: string) {
+       this._dataAccess.deletePet(id)
+        .subscribe(data => console.log(data));
+    }
 }

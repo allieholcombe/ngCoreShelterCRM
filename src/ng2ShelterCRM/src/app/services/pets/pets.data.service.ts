@@ -30,4 +30,8 @@ export class PetsDataAccess {
         return this.http.post(this._host + '/api/pets', newPet, {headers:this.headers});
             // .map((res: Response) => res.json());
     }
+
+    deletePet(id: string) {
+        return this.http.delete(this._host + '/api/pets/' + id);
+    }
 }
