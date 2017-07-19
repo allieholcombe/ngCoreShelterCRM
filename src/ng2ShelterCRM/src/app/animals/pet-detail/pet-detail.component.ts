@@ -1,15 +1,38 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
+
+//services
+import { PetsRepository } from './../../services/pets/pets.repository.service'
+
+//models
+import { Pet } from './../../models/pet.model';
 
 @Component({
   selector: 'pet-detail',
   templateUrl: './pet-detail.component.html',
-  styleUrls: ['./pet-detail.component.css']
+  styleUrls: ['./pet-detail.component.scss'],
+  providers: [PetsRepository]
 })
 export class PetDetailComponent implements OnInit {
+  petId: string = null;
+  pet: Pet;
+  isComplete: boolean = false;
 
-  constructor() { }
+  constructor(private _route: ActivatedRoute,
+              private _location: Location,
+              private _repo: PetsRepository) {
+
+  }
 
   ngOnInit() {
+    this._route.params.forEach((params) => {
+      this.petId = params['id'];
+    })
+    this._repo.getSinglePet(this.petId)
+                    .subscribe(data => this.pet = data,
+                               error => console.log("error"),
+                               () => this.isComplete = true);
   }
 
 }

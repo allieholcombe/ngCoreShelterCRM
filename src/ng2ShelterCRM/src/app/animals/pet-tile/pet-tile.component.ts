@@ -6,7 +6,7 @@ import { Pet } from './../../models/pet.model';
 @Component({
   selector: 'pet-tile',
   templateUrl: './pet-tile.component.html',
-  styleUrls: ['./pet-tile.component.css']
+  styleUrls: ['./pet-tile.component.scss']
 })
 export class PetTileComponent implements OnInit {
   @Input() pet: Pet;
