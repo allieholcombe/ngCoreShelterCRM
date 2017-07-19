@@ -20,8 +20,8 @@ export class PetListComponent implements OnInit {
   constructor(private _repo: PetsRepository) { }
 
   ngOnInit() {
+    this.retrievePets();
   }
-
   //NEXT STEP: FORM VALIDATION
   //json returns this with extra array, not sure why
   retrievePets() {
@@ -34,6 +34,7 @@ export class PetListComponent implements OnInit {
         this.isMultiple = true;
       });
   }
+
 
   retrieveSinglePet(id: string) {
     this.isMultiple = false;
