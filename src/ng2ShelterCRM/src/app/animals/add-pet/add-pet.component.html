@@ -1,3 +1,4 @@
-<p>
-  add-pet works!
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="name">
+  <button type="submit">Submit</button>
+</form>

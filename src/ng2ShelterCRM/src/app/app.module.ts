@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
 
@@ -14,18 +14,21 @@ import { PetListComponent } from './animals/petlist/petlist.component';
 //Services
 import { PetsDataAccess } from './services/pets/pets.data.service';
 import { PetsTransform} from './services/pets/pets.transform.service';
+import { AddPetComponent } from './animals/add-pet/add-pet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LogInComponent,
     SplashComponent,
-    PetListComponent
+    PetListComponent,
+    AddPetComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
     routing
   ],
   providers: [PetsDataAccess,

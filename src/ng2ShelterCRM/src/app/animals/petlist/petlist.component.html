@@ -1,4 +1,7 @@
+<!--Get All Pets-->
 <button (click)="retrievePets()">Click for pets</button>
+
+<!--Get Pet By Id-->
 <div>
     <input #petId (keyup.enter)="retrieveSinglePet(petId.value)">
     <button (click)="retrieveSinglePet(petId.value)">Click to find pet</button>
@@ -12,3 +15,5 @@
     </ul>
     <p *ngIf="!isMultiple"> {{result.name}}, {{result.id}}</p>
 </div>
+
+<add-pet></add-pet>
