@@ -30,11 +30,14 @@ export class PetsTransform {
         data = JSON.parse(data);
         if (Array.isArray(data)) {
             for (let i = 0; i < data.length; i++) {
-                // data[i] = this.transformKeyToId(data[i]);
-                // data[i] = new Pet(data[i]);
                 data[i] = this.createPet(data[i]);
             }
         }
         return data;
+    }
+
+    formCreatePet(form: any) {
+        console.log("Creating Pet");
+        return form.get('name').value;
     }
 }

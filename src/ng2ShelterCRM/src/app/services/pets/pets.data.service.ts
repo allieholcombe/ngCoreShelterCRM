@@ -6,7 +6,12 @@ import 'rxjs/Rx';
 
 @Injectable()
 export class PetsDataAccess {
-    constructor(private http: Http) { }
+    public headers: Headers;
+
+    constructor(private http: Http) {
+        this.headers = new Headers();
+        this.headers.append('Content-Type', 'application/json');
+     }
 
     private _host: string = "http://localhost:4300";
 
@@ -20,4 +25,9 @@ export class PetsDataAccess {
             .map((res: Response) => res.json());
     }
 
+    addPet(newPet: Pet) {
+        console.log("post");
+        return this.http.post(this._host + '/api/pets', JSON.stringify(newPet), {headers:this.headers})
+            .map((res: Response) => res.json());
+    }
 }
