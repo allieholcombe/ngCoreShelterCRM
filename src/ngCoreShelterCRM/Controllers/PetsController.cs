@@ -45,8 +45,9 @@ namespace ngCoreShelterCRM.Controllers
 
         // DELETE api/pets/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
+            _repo.DeletePet(id);
         }
     }
 }

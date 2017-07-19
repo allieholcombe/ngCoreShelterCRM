@@ -27,7 +27,7 @@ export class PetsDataAccess {
 
     addPet(newPet: Pet) {
         console.log("post");
-        return this.http.post(this._host + '/api/pets', newPet, {headers:this.headers})
-            .map((res: Response) => res.json());
+        return this.http.post(this._host + '/api/pets', newPet, {headers:this.headers});
+            // .map((res: Response) => res.json());
     }
 }

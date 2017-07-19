@@ -41,5 +41,15 @@ namespace ngCoreShelterCRM.Services.Pets
 
             return newPet.Key;
         }
+
+        public async Task<string> DeletePet(string id)
+        {
+            await db
+              .Child("pets")
+              .Child(id)
+              .DeleteAsync();
+
+            return id;
+        }
     }
 }
