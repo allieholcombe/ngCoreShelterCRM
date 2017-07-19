@@ -43,14 +43,11 @@ namespace ngCoreShelterCRM.Models.Repositories
         /// </summary>
         /// <param name="data">ID/Key of pet</param>
         /// <returns>Pet added to db with key</returns>
-        public async Task<Pet> AddPet(string data)
+        public async Task<Pet> AddPet(Pet data)
         {
-            //this should call a transformation service
-            Pet newPet = await transform.JsonToPet(data);
-          
-            newPet.Key = await dataAccess.AddPet(newPet);
+            data.Key = await dataAccess.AddPet(data);
 
-            return newPet;
+            return data;
             //This method will eventually return a success/fail code
         }
     }

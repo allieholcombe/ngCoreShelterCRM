@@ -32,11 +32,9 @@ namespace ngCoreShelterCRM.Controllers
 
         // POST api/pets
         [HttpPost]
-        public void Post([FromBody] PetAddRequest request)
+        public void Post([FromBody] Pet request)
         {
-            Debug.WriteLine("This is Request");
-            Debug.WriteLine(request);
-            //var pet = _repo.AddPet(request);
+            var result = _repo.AddPet(request);
         }
 
         // PUT api/pets/5
