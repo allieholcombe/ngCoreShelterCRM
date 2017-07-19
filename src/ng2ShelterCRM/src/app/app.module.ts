@@ -17,6 +17,7 @@ import { PetsTransform} from './services/pets/pets.transform.service';
 import { AddPetComponent } from './animals/add-pet/add-pet.component';
 import { DeletePetComponent } from './animals/delete-pet/delete-pet.component';
 import { PetTileComponent } from './animals/pet-tile/pet-tile.component';
+import { PetDetailComponent } from './animals/pet-detail/pet-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PetTileComponent } from './animals/pet-tile/pet-tile.component';
     PetListComponent,
     AddPetComponent,
     DeletePetComponent,
-    PetTileComponent
+    PetTileComponent,
+    PetDetailComponent
   ],
   imports: [
     BrowserModule,

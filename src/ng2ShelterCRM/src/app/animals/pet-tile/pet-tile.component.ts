@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Pet } from './../../models/pet.model';
 
@@ -10,9 +11,13 @@ import { Pet } from './../../models/pet.model';
 export class PetTileComponent implements OnInit {
   @Input() pet: Pet;
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }
+
+  goToDetailPage(clickedPet: Pet) {
+    this._router.navigate(['pets', clickedPet.id]);
+  };
 
 }

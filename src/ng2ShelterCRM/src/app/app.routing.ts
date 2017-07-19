@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 //Components
 import { SplashComponent } from './splash/splash.component';
 import { PetListComponent } from './animals/petlist/petlist.component';
+import { PetDetailComponent } from './animals/pet-detail/pet-detail.component';
 
 const appRoutes: Routes = [
     {
@@ -13,6 +14,10 @@ const appRoutes: Routes = [
     {
         path: 'pets',
         component: PetListComponent
+    },
+    {
+        path: 'pets/:id',
+        component: PetDetailComponent
     }
  ];
 

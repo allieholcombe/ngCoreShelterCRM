@@ -30,6 +30,10 @@ export class PetsRepository {
             return fetchedPet;
     }
 
+    updatePet() {
+        
+    }
+
     deletePet(id: string) {
        this._dataAccess.deletePet(id)
         .subscribe(data => console.log(data));
