@@ -15,6 +15,7 @@ import { Pet } from './../../models/pet.model';
   styleUrls: ['./pet-detail.component.scss'],
   providers: [PetsRepository]
 })
+
 export class PetDetailComponent implements OnInit {
   petId: string = null;
   pet: Pet;
@@ -24,13 +25,13 @@ export class PetDetailComponent implements OnInit {
               private _location: Location,
               private _repo: PetsRepository,
               private _router: Router) {
-
   }
 
   ngOnInit() {
     this._route.params.forEach((params) => {
       this.petId = params['id'];
     })
+
     this._repo.getSinglePet(this.petId)
                     .subscribe(data => this.pet = data,
                                error => console.log("error"),
