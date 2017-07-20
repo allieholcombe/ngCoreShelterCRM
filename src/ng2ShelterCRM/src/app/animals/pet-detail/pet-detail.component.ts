@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 //services
 import { PetsRepository } from './../../services/pets/pets.repository.service'
@@ -21,7 +22,8 @@ export class PetDetailComponent implements OnInit {
 
   constructor(private _route: ActivatedRoute,
               private _location: Location,
-              private _repo: PetsRepository) {
+              private _repo: PetsRepository,
+              private _router: Router) {
 
   }
 
@@ -33,6 +35,10 @@ export class PetDetailComponent implements OnInit {
                     .subscribe(data => this.pet = data,
                                error => console.log("error"),
                                () => this.isComplete = true);
+  }
+
+  goToUpdate() {
+      this._router.navigate(['pets', this.petId, 'update']);
   }
 
 }

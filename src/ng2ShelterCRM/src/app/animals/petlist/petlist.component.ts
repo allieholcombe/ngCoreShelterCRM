@@ -30,12 +30,12 @@ export class PetListComponent implements OnInit {
     this.isComplete = false;
     this._repo.getAllPets()
       .subscribe((data: Response) => this.result = data,
-      (error: any) => console.log("You borked it"),
-      () => {
-        this.isComplete = true;
-        this.isMultiple = true;
-        console.log(this.result);
-      });
+                  (error: any) => console.log("You borked it"),
+                  () => {
+                    this.isComplete = true;
+                    this.isMultiple = true;
+                    console.log(this.result);
+                  });
   }
 
 
@@ -44,7 +44,7 @@ export class PetListComponent implements OnInit {
     this.isComplete = false;
     this._repo.getSinglePet(id)
       .subscribe((data: Response) => this.result = data,
-      (error: any) => console.log("You borked it"),
-      () => this.isComplete = true);
+                 (error: any) => console.log("You borked it"),
+                 () => this.isComplete = true);
   }
 }

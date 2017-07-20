@@ -18,6 +18,7 @@ import { AddPetComponent } from './animals/add-pet/add-pet.component';
 import { DeletePetComponent } from './animals/delete-pet/delete-pet.component';
 import { PetTileComponent } from './animals/pet-tile/pet-tile.component';
 import { PetDetailComponent } from './animals/pet-detail/pet-detail.component';
+import { UpdatePetComponent } from './animals/update-pet/update-pet.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PetDetailComponent } from './animals/pet-detail/pet-detail.component';
     AddPetComponent,
     DeletePetComponent,
     PetTileComponent,
-    PetDetailComponent
+    PetDetailComponent,
+    UpdatePetComponent
   ],
   imports: [
     BrowserModule,
