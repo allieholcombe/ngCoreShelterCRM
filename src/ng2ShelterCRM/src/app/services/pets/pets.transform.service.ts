@@ -17,6 +17,10 @@ export class PetsTransform {
             data.name = data.Name;
             delete data.Name;
         }
+        if(data.hasOwnProperty("Sex")) {
+            data.sex = data.Sex;
+            delete data.Sex;
+        }
         return data;
     }
 
