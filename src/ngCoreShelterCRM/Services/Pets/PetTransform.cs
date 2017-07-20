@@ -49,5 +49,10 @@ namespace ngCoreShelterCRM.Services.Pets
 
             return newPet;
         }
+        public async Task<Pet> UpdatePet(string id, Pet pet)
+        {
+            pet.Key = id;
+            return pet;
+        }
     }
 }

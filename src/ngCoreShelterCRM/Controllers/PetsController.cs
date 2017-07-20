@@ -39,8 +39,10 @@ namespace ngCoreShelterCRM.Controllers
 
         // PUT api/pets/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(string id, [FromBody] Pet request)
         {
+            var result = _repo.UpdatePet(id, request);
+            
         }
 
         // DELETE api/pets/5

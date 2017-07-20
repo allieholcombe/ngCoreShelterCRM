@@ -2,9 +2,11 @@
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div class="form-group">
+    <label for="name">Name</label>
     <input type="text" [formControl]="form.controls['name']" placeholder="name" class="form-control">
   </div>
   <div class="form-group">
+    <label for="sex">Sex</label>
     <input type="text" [formControl]="form.controls['sex']" placeholder="sex" class="form-control">
   </div>
   <button type="submit" class="btn btn-default">Submit</button>

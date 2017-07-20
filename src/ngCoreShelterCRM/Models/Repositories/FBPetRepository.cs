@@ -51,10 +51,18 @@ namespace ngCoreShelterCRM.Models.Repositories
             //This method will eventually return a success/fail code
         }
 
+        public async Task<bool> UpdatePet(string id, Pet pet)
+        {
+            pet = await transform.UpdatePet(id, pet);
+            var response = await dataAccess.UpdatePet(id, pet);
+            return true;
+        }
+
         public async Task<bool> DeletePet(string id)
         {
             var response = await dataAccess.DeletePet(id);
             return true;
         }
+
     }
 }

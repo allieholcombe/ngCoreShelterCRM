@@ -31,6 +31,13 @@ export class PetsDataAccess {
             // .map((res: Response) => res.json());
     }
 
+    updatePet(petToUpdate: Pet) {
+        // let body = {"id": petToUpdate.id.toString(), "pet": petToUpdate};
+        // console.log("this is body");
+        // console.log(body);
+        return this.http.put(this._host + '/api/pets/' + petToUpdate.id, JSON.stringify(petToUpdate), {headers:this.headers});
+    }
+
     deletePet(id: string) {
         return this.http.delete(this._host + '/api/pets/' + id);
     }
