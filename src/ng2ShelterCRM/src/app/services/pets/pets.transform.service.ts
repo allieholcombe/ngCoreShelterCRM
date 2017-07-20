@@ -40,8 +40,10 @@ export class PetsTransform {
         return data;
     }
 
-    formCreatePet(form: any) {
+    formCreatePet(form: any, pet: Pet) {
         console.log("Creating Pet");
-        return form.get('name').value;
+        pet.name = form.get('name').value;
+        pet.sex = form.get('sex').value;
+        return pet;
     }
 }

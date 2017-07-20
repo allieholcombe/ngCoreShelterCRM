@@ -1,6 +1,7 @@
 <h3>Add New Pet</h3>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="text" [formControl] = "form.controls['name']">
+  <input type="text" [formControl] = "form.controls['name']" placeholder="name">
+  <input type="text" [formControl] = "form.controls['sex']" placeholder="sex">
   <button type="submit">Submit</button>
 </form>

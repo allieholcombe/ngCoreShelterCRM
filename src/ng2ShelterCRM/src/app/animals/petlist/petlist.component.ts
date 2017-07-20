@@ -22,9 +22,11 @@ export class PetListComponent implements OnInit {
   ngOnInit() {
     this.retrievePets();
   }
+
   //NEXT STEP: FORM VALIDATION
   //json returns this with extra array, not sure why
   retrievePets() {
+    this.result = null;
     this.isComplete = false;
     this._repo.getAllPets()
       .subscribe((data: Response) => this.result = data,

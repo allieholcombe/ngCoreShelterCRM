@@ -26,7 +26,8 @@ export class AddPetComponent implements OnInit {
               private _data: PetsDataAccess) {
     this.form = fb.group({
       "name": new FormControl(""),
-      "id": null
+      "id": null,
+      "sex": new FormControl("")
     })
   }
 
@@ -36,7 +37,7 @@ export class AddPetComponent implements OnInit {
   //trying to take form controls and apply them to pet model
   onSubmit() {
     //figure out better structure using repository later?
-    this.newPet.name = this._transform.formCreatePet(this.form);
+    this.newPet = this._transform.formCreatePet(this.form, this.newPet);
     this._data.addPet(this.newPet)
       .subscribe(data => console.log(data));
   }
