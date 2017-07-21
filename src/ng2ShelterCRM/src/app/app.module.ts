@@ -4,6 +4,9 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { routing } from './app.routing';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
 
 //Services
 import { PetsDataAccess } from './services/pets/pets.data.service';
@@ -39,7 +42,9 @@ import { RegisterUserComponent } from './common/register-user/register-user.comp
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [PetsDataAccess,
               PetsTransform],
