@@ -46,8 +46,4 @@ export class PetsTransform {
         pet.sex = form.get('sex').value;
         return pet;
     }
-
-    // formUpdatePet(form: any, pet:Pet) {
-    //     pet = this.formCreatePet(form, pet)
-    // }
 }
