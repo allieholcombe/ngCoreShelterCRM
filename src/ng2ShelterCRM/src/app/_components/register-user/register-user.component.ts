@@ -4,13 +4,16 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-import {UserService} from './../services/users.service';
+import {UserService} from './../../_services/users.service';
 
 @Component({
   selector: 'auth-register-user',
   templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.scss'],
-  providers: [UserService]
+  providers: [
+    UserService,
+    AngularFireAuth
+  ]
 })
 export class RegisterUserComponent implements OnInit {
 

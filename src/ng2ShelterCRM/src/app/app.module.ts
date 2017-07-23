@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PetsModule } from './pets/pets.module';
 import { SharedModule } from './shared/shared.module';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from
+  'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { routing } from './app.routing';
+
+import { AppRouting } from './app.routing';
 import { environment } from '../environments/environment';
 
 //Services
@@ -23,7 +28,10 @@ import { RegisterUserComponent } from './_components/register-user/register-user
   imports: [
     SharedModule,
     PetsModule,
-    routing,
+    AppRouting,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

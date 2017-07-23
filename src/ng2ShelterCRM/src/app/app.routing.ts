@@ -9,8 +9,7 @@ import { LogInComponent } from './_components/log-in/log-in.component';
 const appRoutes: Routes = [
     {
         path: '',
-        component: SplashComponent,
-        loadChildren: 'app/auth/auth.module#AuthModule'
+        component: SplashComponent
     },
     {
         path: 'register',
@@ -19,6 +18,10 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LogInComponent
+    },
+    {
+        path: 'pets',
+        loadChildren: './pets/pet.module.ts#PetsModule'
     }
 ];
 
