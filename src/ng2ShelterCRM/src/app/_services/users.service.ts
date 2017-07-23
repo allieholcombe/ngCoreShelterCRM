@@ -12,10 +12,13 @@ export class UserService {
 
     constructor(
         private _auth: AngularFireAuth
-    ) { }
+    ) {
+        this.user = _auth.authState;
+     }
 
     registerUser(email: string, password: string) {
-        this._auth
+        debugger;
+        return this._auth
             .auth
             .createUserWithEmailAndPassword(email, password)
             .then(value => {
@@ -24,6 +27,14 @@ export class UserService {
             .catch(err => {
                 console.log('Something went wrong:', err.message);
             })
+    }
 
+    logIn(email: string, password: string) {
+        return this._auth.auth.signInWithEmailAndPassword(email, password)
+            .then(value => {console.log('Success!', value);
+            })
+        .catch(err => {
+            console.log('Something went wrong:', err.message);
+        })
     }
 }
