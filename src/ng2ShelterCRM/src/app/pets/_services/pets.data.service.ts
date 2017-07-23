@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Pet } from './../../models/pet.model';
+import { Pet } from './../_models/pet.model';
 import 'rxjs/Rx';
 
 

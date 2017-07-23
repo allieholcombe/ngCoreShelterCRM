@@ -4,10 +4,10 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 //services
-import { PetsRepository } from './../../services/pets/pets.repository.service'
+import { PetsRepository } from './../_services/pets.repository.service'
 
 //models
-import { Pet } from './../../models/pet.model';
+import { Pet } from './../_models/pet.model';
 
 @Component({
   selector: 'pet-detail',

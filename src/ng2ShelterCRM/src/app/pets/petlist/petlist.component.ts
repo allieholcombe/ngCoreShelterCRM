@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 //Services
-import { PetsRepository } from './../../services/pets/pets.repository.service';
+import { PetsRepository } from './../_services/pets.repository.service';
 
 //Models
-import { Pet } from './../../models/pet.model';
+import { Pet } from './../_models/pet.model';
 
 @Component({
   selector: 'pet-list',

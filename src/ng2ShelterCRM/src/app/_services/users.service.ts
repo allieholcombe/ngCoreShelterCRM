@@ -5,7 +5,7 @@ import * as firebase from 'firebase/app';
 
 @Injectable()
 
-export class AF {
+export class UserService {
 
     private authState;
     user: Observable<firebase.User>;

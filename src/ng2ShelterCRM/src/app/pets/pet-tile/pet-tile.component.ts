@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Pet } from './../../models/pet.model';
+import { Pet } from './../_models/pet.model';
 
 @Component({
   selector: 'pet-tile',

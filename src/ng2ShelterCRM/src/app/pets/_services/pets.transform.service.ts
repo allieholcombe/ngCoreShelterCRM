@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 
 // Models
-import { Pet } from './../../models/pet.model';
+import { Pet } from './../_models/pet.model';
 
 
 @Injectable()

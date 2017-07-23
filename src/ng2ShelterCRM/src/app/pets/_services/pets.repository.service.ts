@@ -6,7 +6,7 @@ import { PetsDataAccess } from './pets.data.service';
 import { PetsTransform } from './pets.transform.service';
 
 // Models
-import { Pet } from './../../models/pet.model';
+import { Pet } from './../_models/pet.model';
 
 
 @Injectable()

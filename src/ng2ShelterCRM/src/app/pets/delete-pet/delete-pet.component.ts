@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 
 //Services
-import { PetsRepository } from './../../services/pets/pets.repository.service';
+import { PetsRepository } from './../_services/pets.repository.service';
 
 @Component({
   selector: 'delete-pet',

@@ -1,45 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PetsModule } from './pets/pets.module';
+import { SharedModule } from './shared/shared.module';
 
 import { routing } from './app.routing';
 import { environment } from '../environments/environment';
 
 //Services
-import { PetsDataAccess } from './services/pets/pets.data.service';
-import { PetsTransform} from './services/pets/pets.transform.service';
 
 //Components
 import { AppComponent } from './app.component';
-import { SplashComponent } from './splash/splash.component';
-import { PetListComponent } from './animals/petlist/petlist.component';
-import { AddPetComponent } from './animals/add-pet/add-pet.component';
-import { DeletePetComponent } from './animals/delete-pet/delete-pet.component';
-import { PetTileComponent } from './animals/pet-tile/pet-tile.component';
-import { PetDetailComponent } from './animals/pet-detail/pet-detail.component';
-import { UpdatePetComponent } from './animals/update-pet/update-pet.component';
+import { SplashComponent } from './_components/splash/splash.component';
+import { LogInComponent } from './_components/log-in/log-in.component';
+import { RegisterUserComponent } from './_components/register-user/register-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SplashComponent,
-    PetListComponent,
-    AddPetComponent,
-    DeletePetComponent,
-    PetTileComponent,
-    PetDetailComponent,
-    UpdatePetComponent,
+    LogInComponent,
+    RegisterUserComponent
   ],
   imports: [
-    BrowserModule,
-    HttpModule,
-    FormsModule,
-    ReactiveFormsModule,
-    routing
+    SharedModule,
+    PetsModule,
+    routing,
   ],
-  providers: [PetsDataAccess,
-              PetsTransform],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

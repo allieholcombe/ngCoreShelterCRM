@@ -3,12 +3,12 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Observable } from 'rxjs/Rx';
 
 //Services
-import { PetsRepository } from './../../services/pets/pets.repository.service';
-import { PetsTransform } from './../../services/pets/pets.transform.service';
-import { PetsDataAccess } from './../../services/pets/pets.data.service';
+import { PetsRepository } from './../_services/pets.repository.service';
+import { PetsTransform } from './../_services/pets.transform.service';
+import { PetsDataAccess } from './../_services/pets.data.service';
 
 //Models
-import { Pet } from './../../models/pet.model';
+import { Pet } from './../_models/pet.model';
 
 @Component({
   selector: 'add-pet',
