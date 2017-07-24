@@ -40,7 +40,6 @@ export class RegisterUserComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger;
     this._users.registerUser(this.form.get('email').value, this.form.get('password').value);
   }
 }
