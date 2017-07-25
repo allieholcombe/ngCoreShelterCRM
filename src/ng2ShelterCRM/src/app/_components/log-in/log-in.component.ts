@@ -12,7 +12,7 @@ import { User } from './../../_models/user.model';
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css'],
+  styleUrls: ['./log-in.component.scss'],
   providers: [
     AuthService,
     AngularFireAuth
