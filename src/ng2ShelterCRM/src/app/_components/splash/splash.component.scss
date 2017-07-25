@@ -17,5 +17,6 @@ $med-blue: #3d6098;
     .btn:hover, .btn:active, .btn:focus {
       background-color: $med-blue;
       color: white;
+      cursor: pointer;
     }
 }
