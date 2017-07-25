@@ -6,7 +6,7 @@ import {Observable } from 'rxjs/Rx';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-import { UserService } from './../../_services/users.service';
+import { AuthService } from './../../_services/auth.service';
 import { User } from './../../_models/user.model';
 
 @Component({
@@ -14,7 +14,7 @@ import { User } from './../../_models/user.model';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css'],
   providers: [
-    UserService,
+    AuthService,
     AngularFireAuth
   ]
 })
@@ -27,7 +27,7 @@ export class LogInComponent implements OnInit {
 
   constructor(
     private _auth: AngularFireAuth,
-    private _users: UserService,
+    private _users: AuthService,
     fb: FormBuilder
   ) {
     this.form = fb.group({

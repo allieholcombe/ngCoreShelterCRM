@@ -5,7 +5,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-import { UserService } from './../../_services/users.service';
+import { AuthService } from './../../_services/auth.service';
 
 import { NewUser } from './../../_models/newuser.model';
 
@@ -14,7 +14,7 @@ import { NewUser } from './../../_models/newuser.model';
   templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.scss'],
   providers: [
-    UserService,
+    AuthService,
     AngularFireAuth
   ]
 })
@@ -24,7 +24,7 @@ export class RegisterUserComponent implements OnInit {
 
   constructor(
     private _auth: AngularFireAuth,
-    private _users: UserService,
+    private _users: AuthService,
     fb: FormBuilder
   ) {
     this.form = fb.group({
