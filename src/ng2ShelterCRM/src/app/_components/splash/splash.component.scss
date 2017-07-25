@@ -1,14 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700');
 $deep-gray: #333333;
-
-:host {
-  width: 100%;
-  min-height: 100vh;
-  min-width: 100%;
-  display: block;
-  background-image: url('~/assets/images/dog-fullscreen.jpeg');
-  background-size: cover;
-}
+$med-blue: #3d6098;
 
 #home-container {
     max-width: 50%;
@@ -21,5 +12,10 @@ $deep-gray: #333333;
         font-size: 72px;
         font-family: 'Montserrat Subrayada', sans-serif;
         color: $deep-gray;
+    }
+    
+    .btn:hover, .btn:active, .btn:focus {
+      background-color: $med-blue;
+      color: white;
     }
 }
