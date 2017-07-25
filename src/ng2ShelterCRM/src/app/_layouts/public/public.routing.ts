@@ -6,6 +6,11 @@ import { SplashComponent } from './../../_components/splash/splash.component';
 
 export const PUBLIC_ROUTES: Routes = [
   {
+    path: '',
+    redirectTo: 'splash',
+    pathMatch: 'full'
+  },
+  {
     path: 'register',
     component: RegisterUserComponent
   },

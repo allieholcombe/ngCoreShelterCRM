@@ -4,6 +4,7 @@ import { SharedModule } from './shared/shared.module';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 import { AppRouting } from './app.routing';
@@ -36,7 +37,8 @@ import { SecureComponent } from './_layouts/secure/secure.component';
     AppRouting,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserModule,
   ],
   providers: [
     AuthService,

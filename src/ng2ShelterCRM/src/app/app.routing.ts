@@ -16,8 +16,10 @@ import { Guard } from './_services/guard.service';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/splash',
-    pathMatch: 'full'
+    component: SecureComponent,
+    canActivate: [Guard],
+    data: { title: 'Secure Views' },
+    children: SECURE_ROUTES,
   },
   {
     path: '',
@@ -27,11 +29,9 @@ const appRoutes: Routes = [
   },
   {
     path: '',
-    component: SecureComponent,
-    canActivate: [Guard],
-    data: { title: 'Secure Views' },
-    children: SECURE_ROUTES,
-  }
+    redirectTo: '/splash',
+    pathMatch: 'full'
+  },
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
