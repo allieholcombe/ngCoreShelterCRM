@@ -35,7 +35,7 @@ export class LogInComponent implements OnInit {
       "password": new FormControl("")
     });
 
-    this.authState = _auth.authState;
+    this.authState = this._auth.authState;
   }
 
   ngOnInit() {

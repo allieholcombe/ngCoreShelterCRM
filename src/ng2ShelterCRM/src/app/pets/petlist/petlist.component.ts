@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //Services
 import { PetsRepository } from './../_services/pets.repository.service';
+import { AuthService } from './../../_services/auth.service';
 
 //Models
 import { Pet } from './../_models/pet.model';
@@ -10,14 +11,20 @@ import { Pet } from './../_models/pet.model';
   selector: 'pet-list',
   templateUrl: './petlist.component.html',
   styleUrls: ['./petlist.component.scss'],
-  providers: [PetsRepository]
+  providers: [
+    PetsRepository,
+    AuthService
+  ]
 })
 export class PetListComponent implements OnInit {
   result: any;
   isComplete: boolean = false;
   isMultiple: boolean = false;
 
-  constructor(private _repo: PetsRepository) { }
+  constructor(
+    private _repo: PetsRepository,
+    private _auth: AuthService
+  ) { }
 
   ngOnInit() {
     this.retrievePets();
@@ -30,12 +37,12 @@ export class PetListComponent implements OnInit {
     this.isComplete = false;
     this._repo.getAllPets()
       .subscribe((data: Response) => this.result = data,
-                  (error: any) => console.log("You borked it"),
-                  () => {
-                    this.isComplete = true;
-                    this.isMultiple = true;
-                    console.log(this.result);
-                  });
+      (error: any) => console.log("You borked it"),
+      () => {
+        this.isComplete = true;
+        this.isMultiple = true;
+        console.log(this.result);
+      });
   }
 
 
@@ -44,7 +51,11 @@ export class PetListComponent implements OnInit {
     this.isComplete = false;
     this._repo.getSinglePet(id)
       .subscribe((data: Response) => this.result = data,
-                 (error: any) => console.log("You borked it"),
-                 () => this.isComplete = true);
+      (error: any) => console.log("You borked it"),
+      () => this.isComplete = true);
+  }
+
+  logOut() {
+    this._auth.logOut();
   }
 }

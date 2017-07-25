@@ -5,25 +5,29 @@ import { Routes, RouterModule } from '@angular/router';
 import { PetListComponent } from './petlist/petlist.component';
 import { PetDetailComponent } from './pet-detail/pet-detail.component';
 import { UpdatePetComponent } from './update-pet/update-pet.component';
+import { Guard } from './../_services/guard.service';
 
 const petsRoutes: Routes = [
-    {
-        path: 'pets',
-        children: [
-            {
-                path: '',
-                component: PetListComponent
-            },
-            {
-                path: ':id',
-                component: PetDetailComponent
-            },
-            {
-                path: ':id/update',
-                component: UpdatePetComponent
-            }
-        ]
-    },
+  {
+    path: 'pets',
+    children: [
+      {
+        path: '',
+        component: PetListComponent,
+        canActivate: [Guard]
+      },
+      {
+        path: ':id',
+        component: PetDetailComponent,
+        canActivate: [Guard]
+      },
+      {
+        path: ':id/update',
+        component: UpdatePetComponent,
+        canActivate: [Guard]
+      }
+    ]
+  },
 
 ]
 
