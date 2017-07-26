@@ -42,7 +42,6 @@ export class LogInComponent implements OnInit {
   }
 
     onSubmit() {
-    debugger;
     this._users.logIn(this.form.get('email').value, this.form.get('password').value);
   }
 

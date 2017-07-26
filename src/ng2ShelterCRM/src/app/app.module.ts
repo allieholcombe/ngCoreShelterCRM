@@ -3,6 +3,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Custom Modules
 import { PetsModule } from './pets/pets.module';
@@ -30,6 +31,7 @@ import { HeaderComponent } from './_layouts/secure/header/header.component';
     PublicComponent,
     SecureComponent,
     HeaderComponent,
+
   ],
   imports: [
     SharedModule,
@@ -40,6 +42,7 @@ import { HeaderComponent } from './_layouts/secure/header/header.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AuthService,
