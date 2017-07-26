@@ -31,7 +31,7 @@ import { HeaderComponent } from './_layouts/secure/header/header.component';
     RegisterUserComponent,
     PublicComponent,
     SecureComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     SharedModule,
