@@ -15,6 +15,11 @@ import { Guard } from './_services/guard.service';
 
 export const appRoutes: Routes = [
   {
+    path: '',
+    redirectTo: 'splash',
+    pathMatch: 'full'
+  },
+  {
     path: 'dashboard',
     component: SecureComponent,
     children: SECURE_ROUTES,
@@ -25,7 +30,7 @@ export const appRoutes: Routes = [
     component: PublicComponent,
     data: { title: 'Public Views' },
     children: PUBLIC_ROUTES
-  }
+  },
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

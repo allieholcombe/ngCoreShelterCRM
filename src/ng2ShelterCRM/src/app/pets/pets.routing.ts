@@ -8,18 +8,18 @@ import { UpdatePetComponent } from './update-pet/update-pet.component';
 import { Guard } from './../_services/guard.service';
 
 const petsRoutes: Routes = [
-  {
-    path: '',
-    component: PetListComponent,
-  },
-  {
-    path: ':id',
-    component: PetDetailComponent
-  },
-  {
-    path: ':id/update',
-    component: UpdatePetComponent
-  }
+  // {
+  //   path: '',
+  //   component: PetListComponent,
+  // },
+  // {
+  //   path: ':id',
+  //   component: PetDetailComponent
+  // },
+  // {
+  //   path: ':id/update',
+  //   component: UpdatePetComponent
+  // }
   // children: [
   //   {
   //     path: '',
