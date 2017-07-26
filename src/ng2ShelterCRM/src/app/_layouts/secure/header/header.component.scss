@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700');
+$deep-gray: #333333;
+$med-gray: rgba(119, 119, 119, 1);
+$med-blue: #337ab7;
+
+.navbar {
+  max-height: 50px;
+  margin-bottom: 10px;
+}
+
+// a.navbar-brand {
+//   // font-size: 72px;
+//   margin-top: -13px;
+//   padding: 0;
+//   font-size: 2.5rem;
+//   font-family: 'Montserrat Subrayada', sans-serif;
+//   color: $med-gray;
+//   &:hover,:focus,:active {
+//     color: $med-blue;
+//   }
+// }

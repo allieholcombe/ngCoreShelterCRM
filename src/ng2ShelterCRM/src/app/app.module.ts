@@ -21,6 +21,7 @@ import { LogInComponent } from './_components/log-in/log-in.component';
 import { RegisterUserComponent } from './_components/register-user/register-user.component';
 import { PublicComponent } from './_layouts/public/public.component';
 import { SecureComponent } from './_layouts/secure/secure.component';
+import { HeaderComponent } from './_layouts/secure/header/header.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SecureComponent } from './_layouts/secure/secure.component';
     LogInComponent,
     RegisterUserComponent,
     PublicComponent,
-    SecureComponent
+    SecureComponent,
+    HeaderComponent
   ],
   imports: [
     SharedModule,

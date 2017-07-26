@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ngCoreShelterCRM.Services.Speciess;
 
 namespace ngCoreShelterCRM.Models.Repositories
 {
@@ -19,7 +20,7 @@ namespace ngCoreShelterCRM.Models.Repositories
         {
             var species = await dataAccess.RetrieveSpecies();
 
-            var speciesList = await transform.TransformPets(species);
+            var speciesList = await transform.TransformSpeciess(species);
 
             return speciesList;
         }
@@ -29,7 +30,7 @@ namespace ngCoreShelterCRM.Models.Repositories
         /// </summary>
         /// <param name="id">ID/Key of species</param>
         /// <returns>Task/single species object</returns>
-        public async Task<Pet> GetSpecies(string id)
+        public async Task<Species> GetSpecies(string id)
         {
             var species = await dataAccess.RetrieveSpeciesById(id);
 
