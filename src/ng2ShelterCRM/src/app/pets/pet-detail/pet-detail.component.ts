@@ -39,7 +39,7 @@ export class PetDetailComponent implements OnInit {
   }
 
   goToUpdate() {
-      this._router.navigate(['pets', this.petId, 'update']);
+      this._router.navigate(['dashboard','pets', this.petId, 'update']);
   }
 
 }

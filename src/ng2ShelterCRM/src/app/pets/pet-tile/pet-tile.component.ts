@@ -17,7 +17,7 @@ export class PetTileComponent implements OnInit {
   }
 
   goToDetailPage(clickedPet: Pet) {
-    this._router.navigate(['pets', clickedPet.id]);
+    this._router.navigate(['dashboard', 'pets', clickedPet.id]);
   };
 
 }

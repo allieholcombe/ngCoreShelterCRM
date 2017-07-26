@@ -29,7 +29,7 @@ export class DeletePetComponent implements OnInit {
   }
 
   goToAllPets() {
-    this._router.navigate(['pets']);
+    this._router.navigate(['dashboard', 'pets']);
   };
 
 }
