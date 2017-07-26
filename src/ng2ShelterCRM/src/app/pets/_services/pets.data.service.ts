@@ -26,15 +26,10 @@ export class PetsDataAccess {
     }
 
     addPet(newPet: Pet) {
-        console.log("post");
         return this.http.post(this._host + '/api/pets', newPet, {headers:this.headers});
-            // .map((res: Response) => res.json());
     }
 
     updatePet(petToUpdate: Pet) {
-        // let body = {"id": petToUpdate.id.toString(), "pet": petToUpdate};
-        // console.log("this is body");
-        // console.log(body);
         return this.http.put(this._host + '/api/pets/' + petToUpdate.id, JSON.stringify(petToUpdate), {headers:this.headers});
     }
 

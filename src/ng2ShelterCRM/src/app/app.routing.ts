@@ -7,8 +7,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 //Components
 import { SplashComponent } from './_components/splash/splash.component';
-import { LogInComponent } from './_components/log-in/log-in.component';
-import { RegisterUserComponent } from './_components/register-user/register-user.component';
+import { LogInComponent } from './users/log-in/log-in.component';
+import { RegisterUserComponent } from './users/register-user/register-user.component';
 import { PublicComponent } from './_layouts/public/public.component';
 import { SecureComponent } from './_layouts/secure/secure.component';
 import { PetListComponent } from './pets/petlist/petlist.component';

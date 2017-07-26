@@ -23,7 +23,6 @@ export class DeletePetComponent implements OnInit {
   }
 
   onSubmit(id: string) {
-    console.log(id);
     this._repo.deletePet(id);
     this.goToAllPets();
   }

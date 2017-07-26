@@ -57,7 +57,7 @@ export class UpdatePetComponent implements OnInit {
     //figure out better structure using repository later?
     this.currentPet = this._transform.formCreatePet(this.form, this.currentPet);
     this._data.updatePet(this.currentPet)
-      .subscribe(data => console.log(data));
+      .subscribe(data => data);
   }
 
   setUpForm() {

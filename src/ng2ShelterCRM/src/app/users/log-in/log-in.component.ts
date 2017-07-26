@@ -7,7 +7,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 import { AuthService } from './../../_services/auth.service';
-import { User } from './../../_models/user.model';
+import { User } from './../_models/user.model';
 
 @Component({
   selector: 'app-log-in',

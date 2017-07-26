@@ -11,19 +11,17 @@ import { User } from './../_models/user.model';
 
 @Injectable()
 export class UsersRepository {
-    constructor(
-        @Inject(UserDataAccess) public _dataAccess: UserDataAccess,
-        @Inject(UserTransform) private _transform: UserTransform
-    ) { }
+  constructor(
+    @Inject(UserDataAccess) public _dataAccess: UserDataAccess,
+    @Inject(UserTransform) public _transform: UserTransform
+  ) { }
 
-    getCurrentUser() {
-        let currentUser = this._dataAccess.getCurrentUser();
-            // .map(data => this._transform.createUser(data))
-            // .subscribe(data => console.log(data));
-        return currentUser;
-    }
+  getCurrentUser() {
+    return this._dataAccess.getCurrentUser()
+      .map(data => this._transform.createUser(data))
+  }
 
-    updateUser() {
-        
-    }
+  updateUser() {
+
+  }
 }

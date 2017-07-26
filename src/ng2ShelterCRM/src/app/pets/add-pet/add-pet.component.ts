@@ -39,6 +39,6 @@ export class AddPetComponent implements OnInit {
     //figure out better structure using repository later?
     this.newPet = this._transform.formCreatePet(this.form, this.newPet);
     this._data.addPet(this.newPet)
-      .subscribe(data => console.log(data));
+      .subscribe(data => data);
   }
 }

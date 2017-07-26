@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from './../../../_services/auth.service';
-import {User} from './../../../_models/user.model';
+import { AuthService } from './../../../_services/auth.service';
+import { UsersRepository } from './../../../users/_services/user.repository.service';
+import { User } from './../../../users/_models/user.model';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,15 @@ import {User} from './../../../_models/user.model';
 })
 export class HeaderComponent implements OnInit {
   public isCollapsed;
-  private _user: User;
+  private _user;
 
-  constructor(private _auth: AuthService) {   }
+  constructor(
+    private _auth: AuthService,
+    private _repo: UsersRepository
+  ) { }
 
   ngOnInit() {
-    this._auth.user
+    this._repo.getCurrentUser()
       .subscribe(data => this._user = data);
   }
 

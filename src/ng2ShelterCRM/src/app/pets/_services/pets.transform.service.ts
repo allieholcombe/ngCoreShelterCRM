@@ -41,7 +41,6 @@ export class PetsTransform {
     }
 
     formCreatePet(form: any, pet: Pet) {
-        console.log("Creating Pet");
         pet.name = form.get('name').value;
         pet.sex = form.get('sex').value;
         return pet;

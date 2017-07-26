@@ -25,7 +25,7 @@ export class AuthService {
       .auth
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
-        console.log('Success!', value);
+        console.log('Success!');
         this._router.navigate(['/login']);
       })
       .catch(err => {

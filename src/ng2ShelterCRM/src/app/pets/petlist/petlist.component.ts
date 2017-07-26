@@ -41,7 +41,6 @@ export class PetListComponent implements OnInit {
       () => {
         this.isComplete = true;
         this.isMultiple = true;
-        console.log(this.result);
       });
   }
 
