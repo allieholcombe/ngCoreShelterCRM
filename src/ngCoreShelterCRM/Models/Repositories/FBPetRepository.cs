@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using ngCoreShelterCRM.Services.Pets;
+using System;
+using System.Diagnostics;
 
 namespace ngCoreShelterCRM.Models.Repositories
 {
@@ -53,9 +55,17 @@ namespace ngCoreShelterCRM.Models.Repositories
 
         public async Task<bool> UpdatePet(string id, Pet pet)
         {
-            pet = await transform.UpdatePet(id, pet);
-            var response = await dataAccess.UpdatePet(id, pet);
-            return true;
+            try
+            {
+                pet = await transform.UpdatePet(id, pet);
+                await dataAccess.UpdatePet(id, pet);
+                return true;
+            }
+            catch(Exception err)
+            {
+                Debug.WriteLine(err);
+                return false;
+            }
         }
 
         public async Task<bool> DeletePet(string id)
