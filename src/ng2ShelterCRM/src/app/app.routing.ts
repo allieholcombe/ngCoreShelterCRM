@@ -13,25 +13,19 @@ import { SecureComponent } from './_layouts/secure/secure.component';
 //Services
 import { Guard } from './_services/guard.service';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     component: SecureComponent,
-    canActivate: [Guard],
-    data: { title: 'Secure Views' },
     children: SECURE_ROUTES,
+    canActivate: [Guard],
   },
   {
     path: '',
     component: PublicComponent,
     data: { title: 'Public Views' },
     children: PUBLIC_ROUTES
-  },
-  {
-    path: '',
-    redirectTo: '/splash',
-    pathMatch: 'full'
-  },
+  }
 ];
 
 export const AppRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);

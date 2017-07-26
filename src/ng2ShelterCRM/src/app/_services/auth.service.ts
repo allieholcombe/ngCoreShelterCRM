@@ -37,7 +37,7 @@ export class AuthService {
     return this._auth.auth.signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Success!');
-        this._router.navigate(['/pets']);
+        this._router.navigate(['/dashboard']);
       })
       .catch(err => {
         console.log('Something went wrong:', err.message);

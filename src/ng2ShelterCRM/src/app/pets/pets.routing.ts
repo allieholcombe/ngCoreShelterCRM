@@ -9,25 +9,33 @@ import { Guard } from './../_services/guard.service';
 
 const petsRoutes: Routes = [
   {
-    path: 'pets',
-    children: [
-      {
-        path: '',
-        component: PetListComponent,
-        canActivate: [Guard]
-      },
-      {
-        path: ':id',
-        component: PetDetailComponent,
-        canActivate: [Guard]
-      },
-      {
-        path: ':id/update',
-        component: UpdatePetComponent,
-        canActivate: [Guard]
-      }
-    ]
+    path: '',
+    component: PetListComponent,
   },
+  {
+    path: ':id',
+    component: PetDetailComponent
+  },
+  {
+    path: ':id/update',
+    component: UpdatePetComponent
+  }
+  // children: [
+  //   {
+  //     path: '',
+  //     component: PetListComponent,
+  //     outlet: 'secure'
+  //   },
+  //   {
+  //     path: ':id',
+  //     component: PetDetailComponent
+  //   },
+  //   {
+  //     path: ':id/update',
+  //     component: UpdatePetComponent
+  //   }
+  // ]
+  // }
 
 ]
 

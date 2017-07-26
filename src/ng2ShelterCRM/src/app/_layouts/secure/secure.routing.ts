@@ -1,4 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
+import {SecureComponent} from './secure.component';
+import { PetListComponent } from './../../pets/petlist/petlist.component';
 
 export const SECURE_ROUTES: Routes = [
   {
@@ -8,6 +10,10 @@ export const SECURE_ROUTES: Routes = [
   },
   {
     path: 'pets',
-    loadChildren: './pets/pets.module.ts#PetsModule'
+    loadChildren: 'app/pets/pets.module#PetsModule'
   }
+  // {
+  //   path: 'pets',
+  //   loadChildren: './pets/pets.module.ts#PetsModule'
+  // }
 ]
