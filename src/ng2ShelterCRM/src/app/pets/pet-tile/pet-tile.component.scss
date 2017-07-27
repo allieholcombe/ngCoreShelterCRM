@@ -16,10 +16,19 @@ h3 a {
 
 }
 
-.fa-mars {
-  color: $med-blue;
+span.fa-stack {
+  font-size: 1.25rem;
+  float: right;
 }
 
-.fa-venus {
-  color: #ff5490;
+.male {
+  .fa-circle {
+    color: $med-blue;
+  }
+}
+
+.female {
+  .fa-circle {
+    color: #ff4084;
+  }
 }

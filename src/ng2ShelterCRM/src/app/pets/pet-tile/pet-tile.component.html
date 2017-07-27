@@ -2,8 +2,11 @@
 <div class="card-block">
   <h3 class="card-title">
     <a (click)="goToDetailPage(pet)">{{pet.name}}</a>
-    </h3>
-    <i [ngClass]="setSex(pet)" aria-hidden="true"></i>
+    <span *ngIf="pet.sex" [ngClass]="setSexColor(pet)">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i [ngClass]="setSex(pet)" aria-hidden="true"></i>
+    </span>
+  </h3>
 
 </div>
 <div class="card-footer text-muted">

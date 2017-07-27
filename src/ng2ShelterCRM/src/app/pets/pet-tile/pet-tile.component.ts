@@ -21,18 +21,44 @@ export class PetTileComponent implements OnInit {
     this._router.navigate(['dashboard', 'pets', clickedPet.id]);
   };
 
+  setSexColor(pet) {
+    let classes;
+    if (pet.sex.toLowerCase() === "female") {
+      classes = {
+        'fa-stack': true,
+        'female': true,
+        'ml-auto': true
+      }
+    }
+    if (pet.sex.toLowerCase() === "male") {
+      classes = {
+        'fa-stack': true,
+        'male': true,
+        'ml-auto': true
+      }
+    }
+    return classes;
+  }
+
+
   setSex(pet) {
     let classes;
     if (pet.sex.toLowerCase() === "female") {
       classes = {
         'fa': true,
         'fa-venus': true,
+        'fa-stack-1x': true,
+        'fa-inverse': true,
+        'ml-auto': true
       }
     }
     if (pet.sex.toLowerCase() === "male") {
       classes = {
         'fa': true,
         'fa-mars': true,
+        'fa-stack-1x': true,
+        'fa-inverse': true,
+        'ml-auto': true
       }
     }
     return classes;
