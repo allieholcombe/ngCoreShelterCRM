@@ -4,6 +4,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 //Custom Modules
 import { PetsModule } from './pets/pets.module';
@@ -42,7 +43,8 @@ import { HeaderComponent } from './_layouts/secure/header/header.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FlexLayoutModule
   ],
   providers: [
     AuthService,

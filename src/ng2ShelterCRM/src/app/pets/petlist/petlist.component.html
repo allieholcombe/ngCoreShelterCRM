@@ -5,11 +5,9 @@
 </div> -->
 
 <div id="results" *ngIf="isComplete">
-    <p *ngIf="!isMultiple"> {{result.name}}, {{result.id}}</p>
+  <p *ngIf="!isMultiple"> {{result.name}}, {{result.id}}</p>
 
-    <div class="container" *ngIf="isMultiple">
-        <div *ngFor="let pet of result">
-            <pet-tile [pet]="pet" class="card"></pet-tile>
-        </div>
-    </div>
+  <div class="container" *ngIf="isMultiple">
+    <pet-tile *ngFor="let pet of result" [pet]="pet" class="card"></pet-tile>
+  </div>
 </div>
