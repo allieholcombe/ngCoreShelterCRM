@@ -2,8 +2,13 @@
 
 h3 a {
   cursor: pointer;
+  &:hover, :focus, :active {
+    color: $med-blue;
+  }
 }
-
+.card-block {
+  padding-bottom: .5rem;
+}
 .card-img-top {
     width:100%; /* you can use % */
     height: auto;
@@ -31,4 +36,9 @@ span.fa-stack {
   .fa-circle {
     color: #ff4084;
   }
+}
+
+.species {
+  float: right;
+  margin-right: 5px;
 }
