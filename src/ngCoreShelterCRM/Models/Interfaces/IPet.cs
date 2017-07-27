@@ -24,5 +24,10 @@ namespace ngCoreShelterCRM.Models.Interfaces
             get;
             set;
         }
+        string Image
+        {
+            get;
+            set;
+        }
     }
 }

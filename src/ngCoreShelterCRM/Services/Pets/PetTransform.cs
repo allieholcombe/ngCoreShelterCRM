@@ -38,6 +38,15 @@ namespace ngCoreShelterCRM.Services.Pets
                     currentPet.Sex = "";
                 }
 
+                if ($"{ pet.Object.Image }" != null)
+                {
+                    currentPet.Image = $"{ pet.Object.Image }";
+                }
+                else
+                {
+                    currentPet.Image = "";
+                }
+
                 petList.Add(currentPet);
             }
             return petList;

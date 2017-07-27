@@ -1,28 +1,25 @@
+@import './../../../assets/scss/globalvars';
+
 h3 a {
   cursor: pointer;
 }
 
 .card-img-top {
- 
+    width:100%; /* you can use % */
+    height: auto;
 }
 
-.thumbnail {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
+.card-footer {
+  border-top-width: 0;
+  background-color: transparent;
+  padding: 5px;
+
 }
-.thumbnail img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 100%;
-  width: auto;
-  -webkit-transform: translate(-50%,-50%);
-      -ms-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+
+.fa-mars {
+  color: $med-blue;
 }
-.thumbnail img.portrait {
-  width: 100%;
-  height: auto;
+
+.fa-venus {
+  color: #ff5490;
 }

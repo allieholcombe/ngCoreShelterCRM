@@ -34,7 +34,8 @@ export class UpdatePetComponent implements OnInit {
     this.form = fb.group({
       "name": new FormControl(""),
       "id": null,
-      "sex": new FormControl("")
+      "sex": new FormControl(""),
+      "image": new FormControl("")
     });
   }
 
@@ -63,5 +64,6 @@ export class UpdatePetComponent implements OnInit {
   setUpForm() {
     this.form.controls['name'].setValue(this.currentPet.name);
     this.form.controls['sex'].setValue(this.currentPet.sex);
+    this.form.controls['image'].setValue(this.currentPet.image);
   }
 }

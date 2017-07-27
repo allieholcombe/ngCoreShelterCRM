@@ -27,7 +27,8 @@ export class AddPetComponent implements OnInit {
     this.form = fb.group({
       "name": new FormControl(""),
       "id": null,
-      "sex": new FormControl("")
+      "sex": new FormControl(""),
+      "image": new FormControl("")
     })
   }
 
