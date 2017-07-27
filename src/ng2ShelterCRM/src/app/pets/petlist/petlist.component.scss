@@ -5,16 +5,6 @@
   justify-content: space-between; /* (4) */
   align-content: flex-start; /* (5) */
 }
-// .container:after {
-//   content: "";
-//   flex: auto;
-// }
-
-@media (min-width: 1203px) {
-  .container {
-    // grid-template-columns: repeat(auto-fill, 23%);
-  }
-}
 
 @media (min-width: 992px) and (max-width: 1203px) {
   .container {
