@@ -1,22 +1,15 @@
-<!--Get All Pets-->
-<button (click)="retrievePets()">Click for pets</button>
-
 <!--Get Pet By Id-->
-<div>
+<!-- <div>
     <input #petId (keyup.enter)="retrieveSinglePet(petId.value)">
     <button (click)="retrieveSinglePet(petId.value)">Click to find pet</button>
-</div>
+</div> -->
 
 <div id="results" *ngIf="isComplete">
     <p *ngIf="!isMultiple"> {{result.name}}, {{result.id}}</p>
 
     <div class="container" *ngIf="isMultiple">
         <div *ngFor="let pet of result">
-            <pet-tile [pet]="pet"></pet-tile>
+            <pet-tile [pet]="pet" class="card"></pet-tile>
         </div>
     </div>
 </div>
-
-<add-pet></add-pet>
-
-<button class="btn btn-danger" (click)="logOut()">Log Out</button>
