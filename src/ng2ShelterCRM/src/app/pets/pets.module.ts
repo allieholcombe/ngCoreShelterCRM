@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 // import { PetsRouting } from './pets.routing';
 import { SharedModule } from './../shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Components
 import { PetListComponent } from './petlist/petlist.component';
@@ -18,6 +19,8 @@ import { PetsTransform } from './_services/pets.transform.service';
   imports: [
     SharedModule, // ngFor, ngIf directives
     // PetsRouting,
+    NgbModule
+
   ],
   declarations: [
     PetListComponent,

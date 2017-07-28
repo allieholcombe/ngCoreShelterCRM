@@ -42,4 +42,55 @@ export class PetDetailComponent implements OnInit {
       this._router.navigate(['dashboard','pets', this.petId, 'update']);
   }
 
+    setSexColor(pet) {
+    let classes;
+    if (pet.sex.toLowerCase() === "female") {
+      classes = {
+        'fa-stack': true,
+        'female': true,
+        'ml-auto': true
+      }
+    }
+    if (pet.sex.toLowerCase() === "male") {
+      classes = {
+        'fa-stack': true,
+        'male': true,
+        'ml-auto': true
+      }
+    }
+    return classes;
+  }
+
+
+  setSex(pet) {
+    let classes;
+    if (pet.sex.toLowerCase() === "female") {
+      classes = {
+        'fa': true,
+        'fa-venus': true,
+        'fa-stack-1x': true,
+        'fa-inverse': true,
+        'ml-auto': true
+      }
+    }
+    if (pet.sex.toLowerCase() === "male") {
+      classes = {
+        'fa': true,
+        'fa-mars': true,
+        'fa-stack-1x': true,
+        'fa-inverse': true,
+        'ml-auto': true
+      }
+    }
+    return classes;
+  }
+
+    deletePet(id: string) {
+    this._repo.deletePet(id);
+    this.goToAllPets();
+  }
+
+  goToAllPets() {
+    this._router.navigate(['dashboard', 'pets']);
+  };
 }

@@ -1,0 +1,72 @@
+@import './../../../assets/scss/globalvars';
+
+h1 {
+  width: 100%;
+  // padding-right: 1.5rem;
+  // padding-left: 1.5rem;
+  line-height: 1;
+}
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.row {
+  padding:0;
+}
+
+span.fa-stack {
+  font-size: 2rem;
+  float: right;
+  margin-top: -10px;
+}
+
+.male {
+  .fa-circle {
+    color: $med-blue;
+  }
+}
+
+.female {
+  .fa-circle {
+    color: #ff4084;
+  }
+}
+
+.info-card {
+  width: 100%;
+  font-size: 1.25rem;
+  flex-grow: 1;
+  .card-header {
+    text-transform: uppercase;
+  }
+  .card-footer {
+    padding: .5rem;
+    border-top-width: 0;
+    background-color: transparent;
+  }
+  .card-block {
+    padding-bottom: .5rem;
+  }
+}
+
+.col-md-7 {
+  padding-right: 0;
+  display: flex;
+  flex-flow: column no-wrap;
+}
+
+.col-md-5 {
+  padding-left: 0;
+}
+
+div.btn-group {
+  width: 100%;
+  .dropdown-menu {
+    width: 100%;
+    .dropdown-item:hover {
+      background-color: $med-blue;
+      color: white;
+    }
+  }
+}
