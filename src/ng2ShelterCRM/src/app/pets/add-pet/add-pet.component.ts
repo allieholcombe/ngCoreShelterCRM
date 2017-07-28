@@ -20,11 +20,12 @@ import { Pet } from './../_models/pet.model';
 export class AddPetComponent implements OnInit {
   form: FormGroup;
   newPet: Pet = new Pet();
+  @Output() petAdded = new EventEmitter();
   @Output() closeForm = new EventEmitter();
 
   constructor(fb: FormBuilder,
-              private _transform: PetsTransform,
-              private _data: PetsDataAccess) {
+    private _transform: PetsTransform,
+    private _data: PetsDataAccess) {
     this.form = fb.group({
       "name": new FormControl(""),
       "id": null,
@@ -39,9 +40,15 @@ export class AddPetComponent implements OnInit {
   //trying to take form controls and apply them to pet model
   onSubmit() {
     //figure out better structure using repository later?
+    debugger;
     this.newPet = this._transform.formCreatePet(this.form, this.newPet);
     this._data.addPet(this.newPet)
-      .subscribe(data => data);
+      .subscribe(data => data,
+      (err) => console.log("Error", err),
+      () => {
+        this.petAdded.emit(null);
+        this.hideAddForm();
+      });
   }
 
   hideAddForm() {

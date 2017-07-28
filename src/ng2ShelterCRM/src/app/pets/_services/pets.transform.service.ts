@@ -45,6 +45,7 @@ export class PetsTransform {
   }
 
   formCreatePet(form: any, pet: Pet) {
+    debugger;
     pet.name = form.get('name').value;
     pet.sex = form.get('sex').value;
     pet.image = form.get('image').value;

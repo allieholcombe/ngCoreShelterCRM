@@ -26,6 +26,7 @@ export class PetsDataAccess {
     }
 
     addPet(newPet: Pet) {
+      debugger;
         return this.http.post(this._host + '/api/pets', newPet, {headers:this.headers});
     }
 

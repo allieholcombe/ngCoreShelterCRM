@@ -3,7 +3,7 @@
     <input #petId (keyup.enter)="retrieveSinglePet(petId.value)">
     <button (click)="retrieveSinglePet(petId.value)">Click to find pet</button>
 </div> -->
-<add-pet *ngIf="addPet" (closeForm)="closeAddForm($event)"></add-pet>
+<add-pet *ngIf="addPet" (closeForm)="closeAddForm($event)" (petAdded)="retrievePets($event)"></add-pet>
 
 <div class="row">
   <h1>All Pets</h1>

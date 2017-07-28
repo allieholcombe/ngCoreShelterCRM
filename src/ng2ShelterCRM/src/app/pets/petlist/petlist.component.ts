@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef  } from '@angular/core';
 
 //Services
 import { PetsRepository } from './../_services/pets.repository.service';
@@ -24,10 +24,14 @@ export class PetListComponent implements OnInit {
 
   constructor(
     private _repo: PetsRepository,
-    private _auth: AuthService
+    private _auth: AuthService,
   ) { }
 
   ngOnInit() {
+    this.retrievePets();
+  }
+
+  ngOnChange() {
     this.retrievePets();
   }
 
@@ -60,5 +64,10 @@ export class PetListComponent implements OnInit {
   }
     closeAddForm() {
     this.addPet = false;
+  }
+
+  updateList() {
+    this.closeAddForm();
+    this.result.detectChanges();
   }
 }
