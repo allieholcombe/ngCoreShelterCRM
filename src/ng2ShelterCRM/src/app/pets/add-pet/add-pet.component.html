@@ -1,0 +1,27 @@
+<div class="overlay">
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Add New Pet
+        <i class="fa fa-times-circle ml-auto" (click)="hideAddForm()"></i>
+      </h2>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="card-block">
+        <div class="form-group">
+          <input type="text" [formControl]="form.controls['name']" placeholder="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" [formControl]="form.controls['sex']" placeholder="sex" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" [formControl]="form.controls['image']" placeholder="image url" class="form-control">
+        </div>
+      </div>
+      <div class="form-footer">
+        <button type="submit" class="btn btn-default btn-block">Add Pet</button>
+      </div>
+    </form>
+  </div>
+</div>

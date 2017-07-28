@@ -1,0 +1,14 @@
+<div class="sub-container">
+  <h1>AdoptCare</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <!-- <label for="email">Email:</label> -->
+      <input type="text" name="email" [formControl]="form.controls['email']" class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <!-- <label for="password">Password:</label> -->
+      <input type="password" name="password" [formControl]="form.controls['password']" class="form-control" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default btn-block">Log In</button>
+  </form>
+</div>

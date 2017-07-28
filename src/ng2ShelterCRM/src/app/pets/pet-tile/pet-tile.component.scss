@@ -1,0 +1,44 @@
+@import './../../../assets/scss/globalvars';
+
+h3 a {
+  cursor: pointer;
+  &:hover, :focus, :active {
+    color: $med-blue;
+  }
+}
+.card-block {
+  padding-bottom: .5rem;
+}
+.card-img-top {
+    width:100%; /* you can use % */
+    height: auto;
+}
+
+.card-footer {
+  border-top-width: 0;
+  background-color: transparent;
+  padding: 5px;
+
+}
+
+span.fa-stack {
+  font-size: 1.25rem;
+  float: right;
+}
+
+.male {
+  .fa-circle {
+    color: $med-blue;
+  }
+}
+
+.female {
+  .fa-circle {
+    color: #ff4084;
+  }
+}
+
+.species {
+  float: right;
+  margin-right: 5px;
+}

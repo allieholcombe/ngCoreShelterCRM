@@ -1,0 +1,23 @@
+// @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700');
+@import './../../../../assets/scss/globalvars';
+// $deep-gray: #333333;
+// $med-gray: rgba(119, 119, 119, 1);
+// $med-blue: #337ab7;
+
+.navbar {
+  max-height: 50px;
+  margin-bottom: 10px;
+}
+
+a.navbar-brand {
+  font-family: $fancy;
+  color: $deep-gray;
+  &:hover, :focus, :active {
+    color: $med-blue;
+  }
+  font-size: 36px;
+}
+
+// #log-out {
+
+// }

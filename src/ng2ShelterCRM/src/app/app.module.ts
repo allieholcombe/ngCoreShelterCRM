@@ -1,28 +1,55 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { routing } from './app.routing';
+//Custom Modules
+import { PetsModule } from './pets/pets.module';
+import { UsersModule } from './users/users.module';
+import { SharedModule } from './shared/shared.module';
+
+import { AppRouting } from './app.routing';
+import { environment } from '../environments/environment';
+
+//Services
+import { Guard } from './_services/guard.service';
+import { AuthService } from './_services/auth.service';
 
 //Components
 import { AppComponent } from './app.component';
-import { LogInComponent } from './common/log-in/log-in.component';
-import { SplashComponent } from './splash/splash.component';
+import { SplashComponent } from './_components/splash/splash.component';
+import { PublicComponent } from './_layouts/public/public.component';
+import { SecureComponent } from './_layouts/secure/secure.component';
+import { HeaderComponent } from './_layouts/secure/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent,
-    SplashComponent
+    SplashComponent,
+    PublicComponent,
+    SecureComponent,
+    HeaderComponent,
+
   ],
   imports: [
+    SharedModule,
+    PetsModule,
+    UsersModule,
+    AppRouting,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     BrowserModule,
-    HttpModule,
-    FormsModule,
-    routing
+    NgbModule.forRoot(),
+    FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    Guard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

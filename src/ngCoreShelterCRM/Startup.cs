@@ -39,6 +39,15 @@ namespace ngCoreShelterCRM
             services.AddSingleton<IConfigurationRoot>(Configuration);
             services.AddSingleton<IConfiguration>(Configuration);
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+
             // Add framework services
             services.AddMvc(options =>
             {
@@ -101,6 +110,8 @@ namespace ngCoreShelterCRM
                 //app.UseExceptionHandler("/");
                 //app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseCors("CorsPolicy");
 
             app.UseDefaultFiles(); // so index.html is not required
             app.UseStaticFiles();

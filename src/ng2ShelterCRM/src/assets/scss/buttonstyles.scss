@@ -1,0 +1,9 @@
+@import './assets/scss/globalvars';
+
+.btn-default {
+  &:hover, :active, :focus {
+    background-color: $med-blue;
+    color: white;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">AdoptCare</a>
+    <!-- <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul> -->
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" routerLink="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>{{_user?.email}}</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#" (click)="logOut()">Log Out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

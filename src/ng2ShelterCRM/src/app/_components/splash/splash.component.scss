@@ -1,0 +1,22 @@
+$deep-gray: #333333;
+$med-blue: #3d6098;
+
+#home-container {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    h1 {
+        font-size: 72px;
+        font-family: 'Montserrat Subrayada', sans-serif;
+        color: $deep-gray;
+    }
+    
+    .btn:hover, .btn:active, .btn:focus {
+      background-color: $med-blue;
+      color: white;
+      cursor: pointer;
+    }
+}

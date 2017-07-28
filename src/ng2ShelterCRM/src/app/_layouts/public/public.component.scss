@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700');
+$deep-gray: #333333;
+
+:host {
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  display: block;
+  background-image: url('~/assets/images/dog-fullscreen.jpeg');
+  background-size: cover;
+}
+
+#home-container {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    h1 {
+        font-size: 72px;
+        font-family: 'Montserrat Subrayada', sans-serif;
+        color: $deep-gray;
+    }
+}

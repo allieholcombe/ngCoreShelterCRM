@@ -13,7 +13,8 @@
     "Microsoft.Extensions.Logging.Console": "1.1.2",
     "Microsoft.NETCore.App": "1.1.2",
     "FirebaseDatabase.net": "3.0.0",
-    "Newtonsoft.Json": "10.0.3"
+    "Newtonsoft.Json": "10.0.3",
+    "FirebaseAuthentication.net": "3.0.5"
   },
 
   "tools": {

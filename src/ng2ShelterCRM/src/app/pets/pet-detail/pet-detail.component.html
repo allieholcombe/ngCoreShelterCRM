@@ -1,0 +1,45 @@
+<div class="row">
+  <h1>
+    {{pet?.name}}
+    <span *ngIf="pet?.sex" [ngClass]="setSexColor(pet)">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i [ngClass]="setSex(pet)" aria-hidden="true"></i>
+      </span>
+  </h1>
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <img src="{{pet?.image}}">
+  </div>
+  <div class="col-md-7">
+    <div class="card info-card">
+      <div class="card-header">
+        Information
+      </div>
+      <div class="card-block">
+        <ul class="list-unstyled">
+          <li><strong>ID:</strong> {{pet?.id}}</li>
+          <li><strong>Species:</strong> Dog</li>
+          <li><strong>Breed:</strong> American Cocker Spaniel</li>
+          <li><strong>Age:</strong> 5 years</li>
+          <li><strong>Intake Date:</strong> 07/27/2017</li>
+          <li><strong>Adopted?:</strong> No</li>
+        </ul>
+
+
+      </div>
+      <div class="card-footer">
+        <div class="btn-group" ngbDropdown>
+          <button type="button" class="btn btn-default dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            ngbDropdownToggle>
+    Options
+  </button>
+          <div class="dropdown-menu">
+            <button class="dropdown-item" type="button" (click)="goToUpdate()">Edit {{pet?.name}}</button>
+            <button class="dropdown-item" type="button" (click)="deletePet(petId)">Delete {{pet?.name}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

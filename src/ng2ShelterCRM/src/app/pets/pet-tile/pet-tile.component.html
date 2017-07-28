@@ -1,0 +1,18 @@
+<img class="card-img-top" src="{{pet.image}}" alt="Card image cap">
+<div class="card-block">
+  <h3 class="card-title">
+    <a (click)="goToDetailPage(pet)">{{pet.name}}</a>
+    <span *ngIf="pet.sex" [ngClass]="setSexColor(pet)">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i [ngClass]="setSex(pet)" aria-hidden="true"></i>
+    </span>
+  </h3>
+  <p>
+    <span class="breed">Labradoodle</span>
+    <span class="species">Dog</span>
+  </p>
+
+</div>
+<div class="card-footer text-muted">
+  <button type="button" class="btn btn-default btn-block" (click)="goToDetailPage(pet)">Details</button>
+</div>
