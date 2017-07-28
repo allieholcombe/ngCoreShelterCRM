@@ -20,6 +20,7 @@ export class PetListComponent implements OnInit {
   result: any;
   isComplete: boolean = false;
   isMultiple: boolean = false;
+  addPet: boolean = false;
 
   constructor(
     private _repo: PetsRepository,
@@ -54,7 +55,10 @@ export class PetListComponent implements OnInit {
       () => this.isComplete = true);
   }
 
-  logOut() {
-    this._auth.logOut();
+  showAddForm() {
+    this.addPet = true;
+  }
+    closeAddForm() {
+    this.addPet = false;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
 
@@ -20,6 +20,7 @@ import { Pet } from './../_models/pet.model';
 export class AddPetComponent implements OnInit {
   form: FormGroup;
   newPet: Pet = new Pet();
+  @Output() closeForm = new EventEmitter();
 
   constructor(fb: FormBuilder,
               private _transform: PetsTransform,
@@ -41,5 +42,9 @@ export class AddPetComponent implements OnInit {
     this.newPet = this._transform.formCreatePet(this.form, this.newPet);
     this._data.addPet(this.newPet)
       .subscribe(data => data);
+  }
+
+  hideAddForm() {
+    this.closeForm.emit(null);
   }
 }

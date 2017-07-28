@@ -3,7 +3,12 @@
     <input #petId (keyup.enter)="retrieveSinglePet(petId.value)">
     <button (click)="retrieveSinglePet(petId.value)">Click to find pet</button>
 </div> -->
+<add-pet *ngIf="addPet" (closeForm)="closeAddForm($event)"></add-pet>
 
+<div class="row">
+  <h1>All Pets</h1>
+  <i *ngIf="!addPet" class="fa fa-plus fa-3x ml-auto" (click)="showAddForm()"></i>
+</div>
 <div id="results" *ngIf="isComplete">
   <p *ngIf="!isMultiple"> {{result.name}}, {{result.id}}</p>
 

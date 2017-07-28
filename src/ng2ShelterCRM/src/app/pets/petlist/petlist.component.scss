@@ -1,3 +1,5 @@
+@import './../../../assets/scss/globalvars';
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 15.5rem);
@@ -17,4 +19,15 @@
   .container {
     grid-template-columns: repeat(auto-fill, 48%);
   }
+}
+
+i {
+  color: $med-blue;
+  &:hover, :active, :focus {
+    color: $dark-blue;
+  }
+}
+
+.row {
+  padding: 0 30px;
 }
