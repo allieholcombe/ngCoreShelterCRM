@@ -9,7 +9,7 @@
 * Build app with “real world” architecture
 * Combine multiple technologies used during course with skills and concepts learned in internship
 
-[Image demonstrating application's architecture](http://i.imgur.com/urrm2q4.png)
+![Image demonstrating application's architecture](http://i.imgur.com/urrm2q4.png)
 
 ## Future Plans
 * Response handling
